@@ -37,8 +37,6 @@ public class AdministradorTest_B_Codigo {
 
     @Test
     public void given_List_Labs_when_buscarComputador_then_ok(){
-
-        Estudiante est = new Estudiante("Codigo_Estudiante_2","Estudiante_2","123");
         Computadora actual = admin.busquedaPorCodigo("GAMMA_2");
         String nombreExpected = "GAMMA_2";
         String nombreActual = actual.getCodigo();
@@ -46,5 +44,11 @@ public class AdministradorTest_B_Codigo {
         assertEquals(nombreExpected,nombreActual);
     }
 
+    @Test
+    public void given_CodigoComputadora_wrong_when_buscarComputadora_then_return_null_and_print_bad_lab(){
+        Computadora actual = admin.busquedaPorCodigo("BETA_2");
+        assertNull(actual);
+
+    }
 
 }

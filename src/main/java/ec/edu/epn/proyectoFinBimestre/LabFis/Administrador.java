@@ -9,15 +9,26 @@ public class Administrador {
 
 
     public Computadora busquedaPorCodigo(String codigo_Comp) {
+        String[] nombre = codigo_Comp.split("_");
         Computadora computadora = null;
-        for(Laboratorio n :labs ){
-            List <Computadora> listaComputadoras = n.getListComputadoras();
-            for(Computadora comp: listaComputadoras){
-                if (comp.getCodigo().equals(codigo_Comp)){
-                    computadora=comp;
-                    break;
+        boolean esValidoNombre = false;
+        for(Laboratorio n:labs){
+            if (n.getNombre().equals(nombre[0])){
+                esValidoNombre=true;
+            }
+        }
+        if (esValidoNombre){
+            for(Laboratorio n :labs ){
+                List <Computadora> listaComputadoras = n.getListComputadoras();
+                for(Computadora comp: listaComputadoras){
+                    if (comp.getCodigo().equals(codigo_Comp)){
+                        computadora=comp;
+                        break;
+                    }
                 }
             }
+        }else {
+            System.out.println("Nombre de laboratorio inexistente.");
         }
         return computadora;
     }
