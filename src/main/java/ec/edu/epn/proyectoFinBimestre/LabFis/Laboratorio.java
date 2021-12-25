@@ -4,23 +4,14 @@ import java.util.List;
 
 public class Laboratorio {
     private String nombre;
-    private List <Computadora> listaComputadoras;
+    private ArrayList <Computadora> listaComputadoras;
 
 
     public Laboratorio(String nombre) {
         this.nombre = nombre;
         listaComputadoras = new ArrayList<Computadora>();
     }
-    public Computadora buscarComputador(String codigoMaquina){
-        Computadora computadora = null;
-        for (Computadora aux:listaComputadoras) {
-            final boolean coincidenCodigosMaquina = aux.getCodigo().equals(codigoMaquina);
-            if(coincidenCodigosMaquina){
-                computadora = aux;
-            }
-        }
-        return computadora;
-    }
+
 
     private  void addComputador(Computadora computadora) {
         listaComputadoras.add(computadora);
