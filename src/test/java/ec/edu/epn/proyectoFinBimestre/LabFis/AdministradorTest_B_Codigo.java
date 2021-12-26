@@ -58,4 +58,10 @@ public class AdministradorTest_B_Codigo {
         String materiaActual = computadorasActuales;
         assertEquals(materiaExpected, materiaActual);
     }
+
+    @Test
+    public void given_materiaComputadora_wrong_busquedaComputadoraMateria_then_return_null_and_print_wrong_materia(){
+        String computadorasActuales = admin.busquedaPorMateria("BDD");
+        assertNull(computadorasActuales);
+    }
 }
