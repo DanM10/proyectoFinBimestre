@@ -37,21 +37,24 @@ public class Administrador {
         this.labs = labs;
     }
 
-    public Computadora busquedaPorMateria(String materia) {
-        String[] nombre = materia.split("_");
+    public String busquedaPorMateria(String materia) {
+        String listaComputadora = "";
         Computadora computadora = null;
         boolean esValido = false;
         for(Laboratorio lab: labs){
-            if(lab.getListComputadoras().get(0).getMateria().equals(nombre[0])){
-                esValido = true;
+            for(int i =0; i < labs.size();i++) {
+                if (lab.getListComputadoras().get(i).getMateria().equalsIgnoreCase(materia)) {
+                    esValido = true;
+                }
             }
         }
         if (esValido){
             for(Laboratorio lab :labs ){
                 List <Computadora> listaComputadoras = lab.getListComputadoras();
                 for(Computadora comp: listaComputadoras){
-                    if (comp.getMateria().equals(nombre)){
+                    if (comp.getMateria().equalsIgnoreCase(materia)){
                         computadora=comp;
+                        listaComputadora += computadora.getMateria();
                         break;
                     }
                 }
@@ -60,6 +63,6 @@ public class Administrador {
             System.out.println("Nombre de materia inexistente.");
         }
 
-        return computadora;
+        return listaComputadora;
     }
 }

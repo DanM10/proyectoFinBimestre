@@ -53,10 +53,9 @@ public class AdministradorTest_B_Codigo {
 
     @Test
     public void given_List_Labs_when_busquedaComputadorMateria_then_ok(){
-        Computadora actual = admin.busquedaPorMateria("Redes");
+        String computadorasActuales = admin.busquedaPorMateria("Redes");
         String materiaExpected = "Redes";
-        String materiaActual = actual.getMateria();
-
+        String materiaActual = computadorasActuales;
         assertEquals(materiaExpected, materiaActual);
     }
 }
