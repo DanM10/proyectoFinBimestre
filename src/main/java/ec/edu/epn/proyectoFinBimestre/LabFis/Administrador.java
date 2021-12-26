@@ -68,6 +68,12 @@ public class Administrador {
     }
 
     public String borrarComputadoraCodigo(String codigoCom) {
-
+        String resultado = "";
+        if(busquedaPorCodigo(codigoCom) != null){
+            Computadora auxComputador = busquedaPorCodigo(codigoCom);
+            auxComputador.setEstudiante(null);
+            resultado = "Computadora eliminada con exito";
+        }
+        return resultado;
     }
 }
