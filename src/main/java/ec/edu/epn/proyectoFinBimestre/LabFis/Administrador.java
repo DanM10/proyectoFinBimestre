@@ -60,6 +60,7 @@ public class Administrador {
                 }
             }
         }else {
+            listaComputadora = null;
             System.out.println("Nombre de materia inexistente.");
         }
 
