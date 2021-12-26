@@ -64,4 +64,13 @@ public class AdministradorTest_B_Codigo {
         String computadorasActuales = admin.busquedaPorMateria("BDD");
         assertNull(computadorasActuales);
     }
+
+    @Test
+    public void given_List_Labs_when_borrarComputadorCodigo_then_ok(){
+        String computadoraEliminada = admin.borrarComputadoraCodigo("GAMMA_2");
+        String resultadoExpected = "Computadora eliminada con exito";
+        String resultadoActual = computadoraEliminada;
+
+        assertEquals(resultadoExpected,resultadoActual);
+    }
 }

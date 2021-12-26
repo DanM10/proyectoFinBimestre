@@ -66,4 +66,8 @@ public class Administrador {
 
         return listaComputadora;
     }
+
+    public String borrarComputadoraCodigo(String codigoCom) {
+        
+    }
 }
