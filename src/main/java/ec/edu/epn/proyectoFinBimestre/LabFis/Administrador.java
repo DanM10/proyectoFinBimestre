@@ -73,6 +73,8 @@ public class Administrador {
             Computadora auxComputador = busquedaPorCodigo(codigoCom);
             auxComputador.setEstudiante(null);
             resultado = "Computadora eliminada con exito";
+        } else{
+            resultado = null;
         }
         return resultado;
     }
