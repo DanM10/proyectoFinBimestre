@@ -36,4 +36,30 @@ public class Administrador {
     public void setLabs(ArrayList<Laboratorio> labs) {
         this.labs = labs;
     }
+
+    public Computadora busquedaPorMateria(String materia) {
+        String[] nombre = materia.split("_");
+        Computadora computadora = null;
+        boolean esValido = false;
+        for(Laboratorio lab: labs){
+            if(lab.getListComputadoras().get(0).getMateria().equals(nombre[0])){
+                esValido = true;
+            }
+        }
+        if (esValido){
+            for(Laboratorio lab :labs ){
+                List <Computadora> listaComputadoras = lab.getListComputadoras();
+                for(Computadora comp: listaComputadoras){
+                    if (comp.getMateria().equals(nombre)){
+                        computadora=comp;
+                        break;
+                    }
+                }
+            }
+        }else {
+            System.out.println("Nombre de materia inexistente.");
+        }
+
+        return computadora;
+    }
 }
