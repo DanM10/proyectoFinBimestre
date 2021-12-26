@@ -76,6 +76,8 @@ public class AdministradorTest_B_Codigo {
 
     @Test
     public void given_codigoComputador_wrong_when_quitarComputadorCodigo_then_return_null_and_print_bad_lab(){
-        
+        String computadorasActuales = admin.borrarComputadoraCodigo("BETA_9");
+
+        assertNull(computadorasActuales);
     }
 }
