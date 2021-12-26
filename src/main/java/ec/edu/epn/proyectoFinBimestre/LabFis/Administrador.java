@@ -68,6 +68,6 @@ public class Administrador {
     }
 
     public String borrarComputadoraCodigo(String codigoCom) {
-        
+
     }
 }
