@@ -29,7 +29,7 @@ public class AdministradorTest_B_Codigo {
             String aux3 = "Codigo_Estudiante_"+i;
             String aux4 = "Estudiante_"+i;
             Estudiante auxEst = new Estudiante(aux3,aux4,"123");
-            labs.get(0).getListComputadoras().add(new Computadora(aux1,8,credencial,auxEst));
+            labs.get(0).getListComputadoras().add(new Computadora(aux1,8,credencial,auxEst,"Redes"));
         }
 
         admin.setLabs(labs);

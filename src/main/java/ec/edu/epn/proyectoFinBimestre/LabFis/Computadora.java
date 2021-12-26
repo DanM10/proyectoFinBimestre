@@ -9,9 +9,10 @@ public class Computadora {
     private String numero;
     private Credencial credencial;
     private Estudiante estudiante;
+    private String materia;
 
 
-    public Computadora(String Codigo, int Ram, Credencial credencial,Estudiante estudiante) {
+    public Computadora(String Codigo, int Ram, Credencial credencial,Estudiante estudiante, String materia) {
         this.Codigo = Codigo;
         this.RAM = Ram;
         String[] aux = Codigo.split("_");
@@ -19,6 +20,7 @@ public class Computadora {
         this.numero = aux[1];
         this.credencial = credencial;
         this.estudiante = estudiante;
+        this.materia = materia;
     }
 
     public Computadora() {
@@ -72,6 +74,9 @@ public class Computadora {
         this.estudiante = estudiante;
     }
 
+    public String getMateria(){return this.materia;}
+
+    public void setMateria(String materia){this.materia = materia;}
 
     @Override
     public String toString() {
