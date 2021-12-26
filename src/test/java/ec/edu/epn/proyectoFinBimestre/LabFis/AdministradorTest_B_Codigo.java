@@ -80,4 +80,9 @@ public class AdministradorTest_B_Codigo {
 
         assertNull(computadorasActuales);
     }
+
+    @Test
+    public void given_List_Labs_when_quitarComputadorEstudiante_then_ok(){
+        String computadorEliminado = admin.borrarComputadoraEstudiante("Estudiante_1");
+    }
 }
