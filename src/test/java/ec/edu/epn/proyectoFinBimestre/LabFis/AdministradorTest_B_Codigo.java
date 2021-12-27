@@ -95,4 +95,14 @@ public class AdministradorTest_B_Codigo {
         String computadorEliminado = admin.borrarComputadoraEstudiante("Estudiante");
         assertNull(computadorEliminado);
     }
+
+    @Test
+    public void given_wrong_nombreEstudiante_when_buscarComputadoraEstudiante_then_Return_null_and_print_worng_name(){
+        assertNull(admin.borrarComputadoraEstudiante("wrong name"));
+    }
+
+    @Test
+    public void given_nombreEstudiante_when_buscarComputadoraEstudiante_then_ok(){
+        assertNotNull(admin.borrarComputadoraEstudiante("Estudiante_1"));
+    }
 }
