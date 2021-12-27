@@ -111,6 +111,8 @@ public class Administrador {
             Computadora aux = buscarComputadoraEstudiante(nombreEstudiante);
             aux.setEstudiante(null);
             resultado = "Computador retirado con exito";
+        }else{
+            resultado = null;
         }
         return resultado;
     }
