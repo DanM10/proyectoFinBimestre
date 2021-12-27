@@ -53,15 +53,19 @@ public class AdministradorTest_B_Codigo {
 
     @Test
     public void given_List_Labs_when_busquedaComputadorMateria_then_ok(){
-        String computadorasActuales = admin.busquedaPorMateria("Redes");
-        String materiaExpected = "Redes";
-        String materiaActual = computadorasActuales;
+        ArrayList<Computadora> computadorasActuales = admin.busquedaPorMateria("Redes");
+        String materiaExpected = "GAMMA_1 GAMMA_2 GAMMA_3 GAMMA_4 GAMMA_5 ";
+        String materiaActual = "";
+        for (Computadora comp:computadorasActuales){
+            materiaActual += comp.getCodigo()+" ";
+        }
+
         assertEquals(materiaExpected, materiaActual);
     }
 
     @Test
     public void given_materiaComputadora_wrong_busquedaComputadoraMateria_then_return_null_and_print_wrong_materia(){
-        String computadorasActuales = admin.busquedaPorMateria("BDD");
+        ArrayList<Computadora> computadorasActuales = admin.busquedaPorMateria("BDD");
         assertNull(computadorasActuales);
     }
 
