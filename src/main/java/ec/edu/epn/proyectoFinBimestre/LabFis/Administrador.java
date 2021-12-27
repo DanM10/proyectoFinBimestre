@@ -37,9 +37,8 @@ public class Administrador {
         this.labs = labs;
     }
 
-    public String busquedaPorMateria(String materia) {
-        String listaComputadora = "";
-        Computadora computadora = null;
+    public  ArrayList<Computadora> busquedaPorMateria(String materia) {
+        ArrayList<Computadora> list_comp = new ArrayList<Computadora>();
         boolean esValido = false;
         for(Laboratorio lab: labs){
             for(int i =0; i < labs.size();i++) {
@@ -53,17 +52,14 @@ public class Administrador {
                 List <Computadora> listaComputadoras = lab.getListComputadoras();
                 for(Computadora comp: listaComputadoras){
                     if (comp.getMateria().equalsIgnoreCase(materia)){
-                        computadora=comp;
-                        listaComputadora += computadora.getMateria();
-                        break;
+                        list_comp.add(comp);
                     }
                 }
             }
+            return list_comp;
         }else {
-            listaComputadora = null;
             System.out.println("Nombre de materia inexistente.");
+            return null;
         }
-
-        return listaComputadora;
     }
 }
