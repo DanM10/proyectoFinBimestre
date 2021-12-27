@@ -78,4 +78,40 @@ public class Administrador {
         }
         return resultado;
     }
+
+    public Computadora buscarComputadoraEstudiante(String nombreEstudiante){
+        Computadora computadora = null;
+        boolean esValidoNombre = false;
+        for(Laboratorio aux:labs){
+            for(int i=0; i < labs.size();i++) {
+                if (aux.getListComputadoras().get(i).getEstudiante().getNombre().equalsIgnoreCase(nombreEstudiante)) {
+                    esValidoNombre = true;
+                }
+            }
+        }
+        if (esValidoNombre){
+            for(Laboratorio n :labs ){
+                List <Computadora> listaComputadoras = n.getListComputadoras();
+                for(Computadora comp: listaComputadoras){
+                    if (comp.getEstudiante().getNombre().equals(nombreEstudiante)){
+                        computadora=comp;
+                        break;
+                    }
+                }
+            }
+        }else {
+            System.out.println("Nombre de estudiante inexistente.");
+        }
+        return computadora;
+    }
+
+    public String borrarComputadoraEstudiante(String nombreEstudiante) {
+        String resultado = "";
+        if(buscarComputadoraEstudiante(nombreEstudiante) != null){
+            Computadora aux = buscarComputadoraEstudiante(nombreEstudiante);
+            aux.setEstudiante(null);
+            resultado = "Computador retirado con exito";
+        }
+        return resultado;
+    }
 }

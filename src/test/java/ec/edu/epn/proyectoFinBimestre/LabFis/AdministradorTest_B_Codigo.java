@@ -84,5 +84,9 @@ public class AdministradorTest_B_Codigo {
     @Test
     public void given_List_Labs_when_quitarComputadorEstudiante_then_ok(){
         String computadorEliminado = admin.borrarComputadoraEstudiante("Estudiante_1");
+        String resultadoExpected = "Computador retirado con exito";
+        String resultadoActual = computadorEliminado;
+
+        assertEquals(resultadoExpected, resultadoActual);
     }
 }
