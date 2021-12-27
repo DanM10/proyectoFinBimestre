@@ -46,7 +46,7 @@ public class Estudiante {
 
     @Override
     public String toString() {
-        return Codigo;
+        return Codigo+" "+Nombre;
     }
 
 }

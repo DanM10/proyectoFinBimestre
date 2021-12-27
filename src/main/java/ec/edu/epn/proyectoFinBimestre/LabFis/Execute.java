@@ -19,6 +19,7 @@ public class Execute {
         }
         admin.setLabs(labs);
 
+        //Story1
         Computadora pc1 = admin.busquedaPorCodigo("GAMMA_2");
         System.out.println(pc1.toString());
         ArrayList<Computadora> pc2 = admin.busquedaPorMateria("Redes");
@@ -27,9 +28,20 @@ public class Execute {
             System.out.println(pc.toString());
         }
         System.out.println(" ");
+        Computadora pc7 = admin.buscarComputadoraEstudiante("Estudiante_1");
+        System.out.println(pc7+"Estudainte: Estudiante_1");
         Computadora pc3 = admin.busquedaPorCodigo("BETA_100");
         System.out.println(pc3+" Tiene que ser nulo");
         ArrayList<Computadora> pc4 = admin.busquedaPorMateria("Metodologias");
         System.out.println(pc4+ " Tiene que ser nulo");
+
+        //Story2
+        System.out.println("Se elimina el usuario asigando a esta computadora esta computadora");
+        System.out.println("Se retira la computadora al -- Estudiante_1 --");
+        System.out.println(admin.borrarComputadoraEstudiante("Estudiante_1"));
+        System.out.println("Se retira el estudainte a la computadora Gamma_2");
+        System.out.println(admin.borrarComputadoraCodigo("GAMMA_2"));
+        System.out.println(labs);
+
     }
 }
